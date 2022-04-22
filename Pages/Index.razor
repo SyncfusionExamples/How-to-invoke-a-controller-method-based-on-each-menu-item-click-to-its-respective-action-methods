@@ -1,0 +1,28 @@
+﻿@page "/"
+<SfMenu TValue="MenuItem">
+    <MenuItems>
+        <MenuItem Text="File" IconCss="e-icons e-file">
+            <MenuItems>
+                <MenuItem Text="Open" Url="/open" IconCss="e-icons e-open"></MenuItem>
+                <MenuItem Text="Save" Url="/save" IconCss="e-icons e-save"></MenuItem>
+                <MenuItem Separator="true"></MenuItem>
+                <MenuItem Text="Exit" Url="/exit"></MenuItem>
+            </MenuItems>
+        </MenuItem>
+
+        <MenuItem Text="Help"></MenuItem>
+    </MenuItems>
+</SfMenu>
+
+<style>
+    .e-file::before {
+        content: '\e7cb';
+    }
+    .e-open::before {
+        content: '\e70f';
+    }
+
+    .e-save::before {
+        content: '\e74d';
+    }
+</style>
