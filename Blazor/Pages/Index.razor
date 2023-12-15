@@ -1,0 +1,39 @@
+﻿@page "/"
+@inject NavigationManager NavigationManager
+
+<SfMenu TValue="MenuItem">
+    <MenuItems>
+
+        <MenuItem Text="File" IconCss="e-icons e-file">
+            <MenuItems>
+                <MenuItem Text="Open" IconCss="e-icons e-open"></MenuItem>
+                <MenuItem Text="Save" IconCss="e-icons e-save"></MenuItem>
+                <MenuItem Separator="true"></MenuItem>
+                <MenuItem Text="Exit"></MenuItem>
+            </MenuItems>
+        </MenuItem>
+
+        <MenuItem Text="Help"></MenuItem>
+    </MenuItems>
+    <MenuEvents TValue="MenuItem" ItemSelected="Open" ></MenuEvents>
+</SfMenu>
+@code {
+  
+    public void Open()
+    {
+       NavigationManager.NavigateTo($"Home/Save",
+                    forceLoad: true);
+    }
+}
+<style>
+    .e-file::before {
+        content: '\e7cb';
+    }
+    .e-open::before {
+        content: '\e70f';
+    }
+
+    .e-save::before {
+        content: '\e74d';
+    }
+</style>
